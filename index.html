@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Melhor Casa de Aviator</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#04140b;
+overflow-x:hidden;
+color:white;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+text-align:center;
+position:relative;
+
+background:
+linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+url('https://i.ibb.co/LX8VjDMp/Screenshot-2026-05-09-095758.png');
+
+background-size:cover;
+background-position:center;
+}
+
+.container{
+max-width:650px;
+animation:fade 1s ease;
+}
+
+.main-image{
+width:100%;
+max-width:420px;
+border-radius:25px;
+margin-bottom:25px;
+box-shadow:0 0 40px #00ff66;
+}
+
+h1{
+font-size:52px;
+line-height:1.1;
+margin-bottom:20px;
+color:#00ff66;
+text-shadow:0 0 20px #00ff66;
+}
+
+.description{
+font-size:20px;
+line-height:1.6;
+color:#e2e2e2;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:18px 45px;
+background:#00ff66;
+color:#000;
+font-size:22px;
+font-weight:bold;
+border-radius:60px;
+text-decoration:none;
+transition:0.3s;
+box-shadow:0 0 30px #00ff66;
+animation:pulse 1.5s infinite;
+}
+
+.btn:hover{
+transform:scale(1.07);
+background:white;
+}
+
+.bonus{
+margin-top:35px;
+padding:25px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.bonus h2{
+color:#00ff66;
+margin-bottom:10px;
+}
+
+.popup{
+position:fixed;
+left:20px;
+bottom:20px;
+background:#111;
+padding:15px 20px;
+border-radius:14px;
+border-left:5px solid #00ff66;
+max-width:320px;
+display:none;
+z-index:999;
+box-shadow:0 0 25px rgba(0,0,0,0.5);
+animation:slideUp .5s ease;
+}
+
+.popup strong{
+color:#00ff66;
+}
+
+@keyframes slideUp{
+from{
+opacity:0;
+transform:translateY(100px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.05);
+}
+100%{
+transform:scale(1);
+}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:38px;
+}
+
+.description{
+font-size:17px;
+}
+
+.btn{
+font-size:18px;
+padding:16px 35px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="container">
+
+<img
+class="main-image"
+src="https://i.ibb.co/LX8VjDMp/Screenshot-2026-05-09-095758.png"
+alt="Aviator">
+
+<h1>A MELHOR CASA DE AVIATOR</h1>
+
+<p class="description">
+Registre-se agora e receba bônus exclusivos para começar a jogar.
+Pagamentos rápidos, suporte 24h e a melhor experiência Aviator.
+</p>
+
+<a href="https://txunaplay.com/t8d4b0740" class="btn">
+REGISTRAR AGORA
+</a>
+
+<div class="bonus">
+
+<h2>BÔNUS EXCLUSIVO</h2>
+
+<p>
+Novos jogadores recebem até 5.000MT no primeiro depósito.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="popup" id="popup"></div>
+
+<script>
+
+const notificacoes = [
+
+"Carlos de Maputo acabou de receber 5.000MT",
+"Ana registrou uma nova conta agora",
+"João acabou de fazer saque instantâneo",
+"Nelson ganhou no Aviator há 1 minuto",
+"Cláudia recebeu bônus VIP",
+"Pedro acabou de ativar promoção especial",
+"Maria ganhou 12.500MT no Aviator"
+
+];
+
+const popup = document.getElementById("popup");
+
+function mostrarPopup(){
+
+const mensagem =
+notificacoes[Math.floor(Math.random() * notificacoes.length)];
+
+popup.innerHTML = `
+<strong>NOTIFICAÇÃO</strong><br><br>
+${mensagem}
+`;
+
+popup.style.display = "block";
+
+setTimeout(() => {
+popup.style.display = "none";
+}, 4000);
+
+}
+
+setInterval(mostrarPopup, 6000);
+
+</script>
+
+</body>
+</html>
